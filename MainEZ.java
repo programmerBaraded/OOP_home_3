@@ -18,22 +18,25 @@ public class MainEZ {
         String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь", "Владлен", "Клим", "Панкратий", "Рубен", "Герман", "Владлен", "Сазон", "Гоша"};
         String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин", "Бирюков", "Копылов", "Горбунов", "Лыткин", "Соколов", "Краснов", "Мартынов", "Халилов"};
 
+        int salaryFixed = random.nextInt(700, 850);
+        int premie = random.nextInt(300, 450);
         int salaryHour = random.nextInt(200, 300);
         int salaryTop = random.nextInt(1000, 1700);
         int indexBalast = random.nextInt(3, 5);
-        int indexW = random.nextInt(30, 70);
+        int indexTop = random.nextInt(30, 70);
         int indexF = random.nextInt(5, 50);
+        int experience = random.nextInt(1, 20);
 
         int typeWorker = random.nextInt(0, 4);
         
         if (typeWorker == 0) {
-            return new Worker(names[random.nextInt(13)], surnames[random.nextInt(13)], salaryHour * indexW);
+            return new Worker(names[random.nextInt(13)], surnames[random.nextInt(13)], salaryFixed + premie, experience);
         }
         else if (typeWorker == 1) {
             return new Freelancer(names[random.nextInt(13)], surnames[random.nextInt(13)], salaryHour * indexF);
         }
         else if (typeWorker == 2) {
-            return new TopManager(names[random.nextInt(5)], surnames[random.nextInt(5)], salaryTop * indexW);
+            return new TopManager(names[random.nextInt(5)], surnames[random.nextInt(5)], salaryTop * indexTop, experience);
         }
         else
             return new Balast(names[random.nextInt(5)], surnames[random.nextInt(5)], salaryHour * indexBalast);
@@ -94,11 +97,19 @@ abstract class Employee implements Comparable<Employee>{
     protected String name;
     protected String surName;
     protected double salary;
+    protected int experience;
 
     public Employee(String name, String surName, double salary) {
         this.name = name;
         this.surName = surName;
         this.salary = salary;
+    }
+
+    public Employee(String name, String surName, double salary, int experience){
+        this.name = name;
+        this.surName = surName;
+        this.salary = salary;
+        this.experience = experience;
     }
 
     public abstract  double calculateSalary();
@@ -116,19 +127,19 @@ abstract class Employee implements Comparable<Employee>{
 
 class Worker extends Employee{
 
-    public Worker(String name, String surName, double salary) {
-        super(name, surName, salary);
+    public Worker(String name, String surName, double salary, int experience) {
+        super(name, surName, salary, experience);
     }
 
     @Override
     public double calculateSalary() {
         return salary ;
-        //TODO: Для фрилансера - return 20 * 5 * salary
     }
 
     @Override
     public String toString() {
-        return String.format("%s %s; Рабочий; Среднемесячная заработная плата (фиксированная): %.2f (руб.)", name, surName, salary);
+       
+        return String.format("%s %s; Рабочий; Среднемесячная заработная плата (фиксированная): %.2f (руб.); выслуга лет: %d", name, surName, salary, experience);
     }
 }
 
@@ -140,10 +151,7 @@ class Freelancer extends Employee{
     public Freelancer(String name, String surName, double salary) {
         super(name, surName, salary);
     }
-    // Scanner scan = new Scanner(System.in);
-    // int workDay = scan.nextInt();
-
-
+    
     @Override
     public double calculateSalary() {
         return salary;
@@ -157,8 +165,10 @@ class Freelancer extends Employee{
 }
 
 class TopManager extends Employee{
-    public TopManager(String name, String surName, double salary){
-        super(name, surName, salary);
+    
+
+    public TopManager(String name, String surName, double salary, int experience){
+        super(name, surName, salary, experience);
     }
 
     @Override
@@ -168,7 +178,7 @@ class TopManager extends Employee{
 
     @Override
     public String toString() {
-        return String.format("%s %s; TopManager, его заработак: %.2f (руб.)", name, surName, salary);
+        return String.format("%s %s; TopManager, его заработак: %.2f (руб.); выслуга лет: %d", name, surName, salary, experience);
     }
 
 
