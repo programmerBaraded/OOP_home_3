@@ -4,3 +4,19 @@
 2023-05-09 13:15:07 info: tempDirectory:c:\Users\BARADED\.vscode\extensions\embold-vscode.embold-0.1.4\temp
 2023-05-09 13:15:07 info: Extraction complete for source: c:\Users\BARADED\.vscode\extensions\embold-vscode.embold-0.1.4\resources\embold-scanner-archive.zip, destination: c:\Users\BARADED\.vscode\extensions\embold-vscode.embold-0.1.4\temp
 2023-05-09 13:15:07 info: Congratulations, your extension "Embold" is now active!
+2023-05-09 18:59:18 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/tScioig
+2023-05-09 18:59:18 error: SQLITE_ERROR: no such table: issues
+2023-05-09 18:59:35 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/index.lock
+2023-05-09 18:59:35 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:00:25 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/index.lock
+2023-05-09 19:00:25 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:01:18 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/refs/heads/master
+2023-05-09 19:01:18 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/logs/refs/heads/master
+2023-05-09 19:01:18 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:01:18 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:01:37 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/config.lock
+2023-05-09 19:01:37 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:54:56 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/index.lock
+2023-05-09 19:54:56 error: SQLITE_ERROR: no such table: issues
+2023-05-09 19:55:05 info: file:///g%3A/%21%21%21%21%21%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95/O_O_P/Home/HomeWork_3/.git/index.lock
+2023-05-09 19:55:05 error: SQLITE_ERROR: no such table: issues

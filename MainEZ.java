@@ -4,7 +4,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
-import java.util.Scanner;
 
 public class MainEZ {
 
@@ -54,15 +53,29 @@ public class MainEZ {
             System.out.println(employee);
         }
 
-        //Arrays.sort(employees, new NameComparator());
-        Arrays.sort(employees);
-
-        System.out.printf("\n*** Отсортированный массив сотрудников ***\n\n");
-
+        Arrays.sort(employees, new NameComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по имени***\n\n");
         for (Employee employee : employees){
             System.out.println(employee);
         }
 
+        Arrays.sort(employees);
+        System.out.printf("\n*** Отсортированный массив сотрудников по зароботку***\n\n");
+        for (Employee employee : employees){
+            System.out.println(employee);
+        }
+
+        Arrays.sort(employees, new SurNameComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по фамилии***\n\n");
+        for (Employee employee : employees){
+            System.out.println(employee);
+        }
+
+        Arrays.sort(employees, new ExperieceComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по выслуге***\n\n");
+        for (Employee employee : employees){
+            System.out.println(employee);
+        }
     }
 
 }
@@ -83,13 +96,36 @@ class NameComparator implements Comparator<Employee> {
 
     @Override
     public int compare(Employee o1, Employee o2) {
-        //return o1.calculateSalary() == o2.calculateSalary() ? 0 : (o1.calculateSalary() > o2.calculateSalary() ? 1 : -1);
+        
         int res = o1.name.compareTo(o2.name);
         if (res == 0){
             res = Double.compare( o2.calculateSalary(), o1.calculateSalary());
         }
         return res;
     }
+}
+
+class SurNameComparator implements Comparator<Employee>{
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        int res = o1.surName.compareTo(o2.surName);
+        if (res == 0){
+            res = Double.compare( o2.calculateSalary(), o1.calculateSalary());
+        }
+        return res;
+    }
+    
+}
+
+class ExperieceComparator implements Comparator<Employee>{
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        
+        return Integer.compare(o1.experience, o2.experience);
+    }
+    
 }
 
 abstract class Employee implements Comparable<Employee>{
